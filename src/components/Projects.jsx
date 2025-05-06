@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import project3 from '../src/assets/project3.png'
 
 const Projects = () => {
   return (
@@ -31,7 +32,7 @@ const Projects = () => {
         {/* Card 2 */}
         <div>
           <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 duration-300">
-            <img className="w-full" src="https://portfolio-website-ruby-rho.vercel.app/project2.PNG" alt="Project 1" />
+            <img className="w-full" src="https://portfolio-website-ruby-rho.vercel.app/project2.PNG" alt="Project 2" />
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">Notes Summarizer by Gemini AI</div>
               <p className="text-gray-700 dark:text-gray-300 text-base">
@@ -43,7 +44,7 @@ const Projects = () => {
         {/* Card 3 */}
         <div>
           <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 duration-300">
-            <img className="w-full" src="../src/assets/project3.png" alt="Project 1" />
+            <img className="w-full" src={project3} alt="Project 1" />
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">Portfolio [HTML,CSS,JS]</div>
               <p className="text-gray-700 dark:text-gray-300 text-base">
