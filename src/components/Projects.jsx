@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import project3 from '/src/assets/project3.png'
+import project3 from './src/assets/project3.png'
 
 const Projects = () => {
   return (
