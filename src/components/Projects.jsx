@@ -1,5 +1,34 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const projectData = [
+  {
+    title: 'Blockchain Simulation',
+    image: 'https://portfolio-website-ruby-rho.vercel.app/project1.png',
+    description:
+      'Build a basic blockchain using SHA-256 hashing with features like block index, timestamp, transactions, and hash validation. Demonstrates how tampering breaks the chain integrity.',
+  },
+  {
+    title: 'Notes Summarizer by Gemini AI',
+    image: 'https://portfolio-website-ruby-rho.vercel.app/project2.PNG',
+    description:
+      'A Vite + React web app that lets users log in and summarize long notes using Gemini AI. Ideal for students or professionals seeking quick summaries.',
+  },
+  {
+    title: 'Portfolio [HTML, CSS, JS]',
+    image:
+      'https://raw.githubusercontent.com/himanshkumar6/portfolio/refs/heads/main/src/assets/project3.png',
+    description:
+      'A personal portfolio using React, Web3, and smart contracts to simulate blockchain tasks like token transfers, SHA256 hashing, and fraud detection.',
+  },
+  {
+    title: 'Autopay Finance',
+    image:
+      'https://raw.githubusercontent.com/himanshkumar6/autopay-finance/refs/heads/main/src/assets/Screenshot%202025-05-06%20221617.png',
+    description:
+      'Refining automated payments in Web3 One stop solution for subscriptions, salaries, SIPs and more automated payments in web3.',
+  }
+];
 
 const Projects = () => {
   return (
@@ -7,54 +36,32 @@ const Projects = () => {
       id="projects"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.5 }}
-      className="min-h-screen lg:min-h-14 my-12 flex flex-col justify-center items-center px-6 py-2 bg-white dark:bg-gray-900"
+      transition={{ duration: 1.2 }}
+      className="min-h-screen py-12 px-6 bg-white dark:bg-gray-900 flex flex-col items-center"
     >
-      {/* Title */}
-      <h1 className="text-4xl md:text-6xl font-bold text-cyan-500 relative inline-block mb-8">
+      {/* Section Title */}
+      <h1 className="text-4xl md:text-6xl font-bold text-cyan-500 mb-10 text-center relative">
         Projects
-        <span className="block h-1 w-32 bg-cyan-500 mx-auto mt-6 rounded-full"></span>
+        <span className="block h-1 w-24 bg-cyan-500 mx-auto mt-4 rounded-full"></span>
       </h1>
-      <div className='flex flex-wrap justify-center items-center gap-8'>
-        {/* Card 1 */}
-        <div>
-          <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 duration-300">
-            <img className="w-full" src="https://portfolio-website-ruby-rho.vercel.app/project1.png" alt="Project 1" />
+
+      {/* Project Cards */}
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {projectData.map((project, index) => (
+          <div
+            key={index}
+            className="max-w-sm mx-auto rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-800 transform transition duration-300 hover:scale-105"
+          >
+            <img src={project.image} alt={project.title} className="w-full object-cover" />
             <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">BlockChain Simulation</div>
-              <p className="text-gray-700 dark:text-gray-300 text-base">
-                Build a basic blockchain using any language with SHA-256 hashing, blocks containing index, timestamp, transactions, previous and current hashes. Include a blockchain class to add/validate blocks. Optionally, add proof-of-work. Print the full chain and show how tampering breaks it
-              </p>
+              <h2 className="font-bold text-xl mb-2 text-gray-900 dark:text-white">{project.title}</h2>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">{project.description}</p>
             </div>
           </div>
-        </div>
-        {/* Card 2 */}
-        <div>
-          <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 duration-300">
-            <img className="w-full" src="https://portfolio-website-ruby-rho.vercel.app/project2.PNG" alt="Project 2" />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">Notes Summarizer by Gemini AI</div>
-              <p className="text-gray-700 dark:text-gray-300 text-base">
-                A modern Vite + React web app that allows users to log in securely via email and password, and instantly summarize long notes using Gemini AI. Users can input text, and the app returns concise summaries powered by the Gemini API—perfect for students, or anyone looking to save time
-              </p>
-            </div>
-          </div>
-        </div>
-        {/* Card 3 */}
-        <div>
-          <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 duration-300">
-            <img className="w-full" src="https://raw.githubusercontent.com/himanshkumar6/portfolio/refs/heads/main/src/assets/project3.png" alt="Project 1" />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">Portfolio [HTML,CSS,JS]</div>
-              <p className="text-gray-700 dark:text-gray-300 text-base">
-                A personal portfolio website built with React.js, Web3, and smart contracts to simulate blockchain operations like token transfers, SHA256 hashing, fraud detection, and ledger management. The project highlights skills in frontend development and blockchain integration, with code hosted on GitHub
-              </p>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </motion.section>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
